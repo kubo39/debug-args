@@ -6,8 +6,6 @@ struct CArgs
 
 extern (C)
 {
-    __gshared CArgs _cArgs;
-
     extern CArgs rt_cArgs() @nogc;
 
     void argsCheck()
