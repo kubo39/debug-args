@@ -19,6 +19,6 @@ extern (C)
 
     void argsCheck()
     {
-        assert(_cArgs.argc != 0);
+        assert(rt_cArgs().argc != 0);
     }
 }
