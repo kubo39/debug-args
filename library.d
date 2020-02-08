@@ -1,3 +1,12 @@
+__gshared CArgs _cArgs;
+
+pragma(crt_constructor)
+extern (C) void ARGV_INIT_ARRAY(int argc, char** argv, char** _environ)
+{
+    _cArgs.argc = argc;
+    _cArgs.argv = argv;
+}
+
 struct CArgs
 {
     int argc;
@@ -10,6 +19,6 @@ extern (C)
 
     void argsCheck()
     {
-        assert(rt_cArgs().argc != 0);
+        assert(_cArgs.argc != 0);
     }
 }
